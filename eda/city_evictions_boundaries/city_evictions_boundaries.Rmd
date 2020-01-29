@@ -1,0 +1,29 @@
+---
+title: Evictions in South Carolina in 2016
+author: Ben Choi
+date: "`r Sys.Date()`"
+output: 
+  github_document:
+    toc: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r message=FALSE, warning=FALSE}
+# Libraries
+library(tidyverse)
+
+# Parameters
+city_evictions_boundaries_path <- 
+  here::here("data/city_evictions_boundaries.rds")
+
+#===============================================================================
+
+# Code
+read_rds(city_evictions_boundaries_path) %>% 
+  top_n(1, evictions)
+```
+
+North Charleston had the most evictions in 2016.
